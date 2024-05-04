@@ -8,6 +8,8 @@ if (isset($_GET['id'])) {
     }
 }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +19,7 @@ if (isset($_GET['id'])) {
     <title>Display Employee</title>
 </head>
 
-<body>
+<body><center>
     <a href="add-employee.php">Add Employee</a>
     <table border='1'>
         <tr>
@@ -34,13 +36,15 @@ if (isset($_GET['id'])) {
         if (mysqli_num_rows($q) != 0) {
             while ($r = mysqli_fetch_array($q)) {
         ?>
-                <tr>
+        
+                <tr >
                     <td><?= $i; ?></td>
                     <td><?= $r['emp_name'] ?></td>
                     <td><?= $r['emp_gender'] ?></td>
                     <td><?= $r['emp_mobile'] ?></td>
                     <td width="15%"><a href="display-employee.php?id=<?= $r['emp_id'] ?>" >Delete</a>&nbsp;&nbsp;&nbsp;<a href="edit-employee.php?id=<?= $r['emp_id'] ?>">Edit</a></td>
                 </tr>
+                
             <?php
                 $i++;
             }
@@ -53,6 +57,7 @@ if (isset($_GET['id'])) {
         }
         ?>
     </table>
+    </center>
 </body>
 
 </html>

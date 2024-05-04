@@ -27,7 +27,7 @@ if ($_POST) {
 </head>
 
 <body>
-
+<center>
     <form method="post">
 
         Name : <input type="text" placeholder="Enter Name " name="emp_name" value="<?= $row['emp_name'] ?>" required>
@@ -41,5 +41,5 @@ if ($_POST) {
 
     </form>
 </body>
-
+</center>
 </html>
